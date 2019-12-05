@@ -1,0 +1,14 @@
+###Adding shebang to all files
+
+1 i\
+#!/usr/bin/python
+
+sed -i -f script.sed *.py
+
+find ./ -maxdepth 1 -name "*.py" -exec sed -i.bak '1i\
+#!/usr/bin/python
+' {} \;
+
+find . -name "*.bak" -exec rm -rf {} \;
+
+###
